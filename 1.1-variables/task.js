@@ -1,27 +1,30 @@
- /*
-	Кратко о работе с функциями:
-	1) Значения в скобках - это аргументы, которые мы получаем в момент вызова функции. Их и надо присваивать требуемым в заданиях переменным.
-	2) После ключевого слова return вместо комментария необходимо написать переменную либо выражение с ответом.
-	3) console.log() прописывать не обязательно, т.к. команда return уже означает вывод результата работы функции.
- */
+ function averageMark(a, g, p) {
 
-function averageMark(a, g, p) {
-	
-    // реализуйте здесь задание №1
-    
-	return // ваш ответ;
-}
+     let algebra = a;
+     let geography = g;
+     let physics = p;
 
-function sayHello(userName) {
-	
-    // реализуйте здесь задание №2
-    
-	return // ваш ответ;
-}
+     let middleMark = (algebra + geography + physics) / 3;
 
-function calculateFormula() {
-    
-	// реализуйте здесь задание №3
-    
-    return // ваш ответ;
-}
+     return Number(middleMark.toFixed(1));
+ }
+
+ function sayHello(userName) {
+     // С целью отработки приктических навыков сделал так, чтобы имя начиналось с Большой буквы
+     // вне зависимости от того, с какой её написал пользователь.
+     let highFirstLetter = userName.slice(0, 1).toUpperCase(); // Вырезаем первую букву и делает её большой
+     let myName = String(highFirstLetter + userName.slice(1)); // Добавляем вырезанную букву к остальному выражению. Возвращаем строку
+     let message = `Привет, мир! Меня зовут ${myName}`;
+
+     return message;
+ }
+
+ function calculateFormula() {
+     let x = 2;
+     let y = 22;
+     let z = 0;
+
+     result = x * y + 5 * z + x - 1;
+
+     return result;
+ }
