@@ -12,7 +12,7 @@
  function sayHello(userName) {
      // С целью отработки приктических навыков сделал так, чтобы имя начиналось с Большой буквы
      // вне зависимости от того, с какой её написал пользователь.
-     let highFirstLetter = userName.slice(0, 1).toUpperCase(); // Вырезаем первую букву и делает её большой
+     let highFirstLetter = userName.slice(0, 1).toUpperCase(); // Вырезаем первую букву и делаем её большой
      let myName = String(highFirstLetter + userName.slice(1)); // Добавляем вырезанную букву к остальному выражению. Возвращаем строку
      let message = `Привет, мир! Меня зовут ${myName}`;
 
