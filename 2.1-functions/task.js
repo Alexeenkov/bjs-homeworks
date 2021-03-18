@@ -56,11 +56,17 @@ function getAverageScore(data) { // Обходит массив с оценка�
     for (let lesson in data) {
         marks = data[lesson];
         averageMark = getAverageMark(marks); // Результат вычисления функции getAverageMark()
+        if (Number.isNaN(averageMark) === true) {
+            averageMark = 0;
+        }
         result[lesson] = averageMark;
         result.average += averageMark;
         dataLength++;
     }
     result.average = result.average / dataLength;
+    if (Number.isNaN(result.average) === true) {
+        result.average = 0;
+    }
     return result;
 }
 
@@ -69,7 +75,11 @@ function getAverageMark(marks) { // Вычисляет и возвращает �
     for (let i = 0; i < marks.length; i++) {
         summMarks += marks[i];
     }
-    return (summMarks / marks.length);
+    let result = summMarks / marks.length;
+    if (Number.isNaN(result) === true) {
+        result = 0;
+    }
+    return result;
 }
 
 console.log(getAverageScore({ // Вызываем функцию, передаем в неё данные по оценкам в виде объекта (указанный формат)
@@ -80,7 +90,7 @@ console.log(getAverageScore({ // Вызываем функцию, передае
     music: [2, 2, 6],
     english: [4, 4, 3],
     poetry: [5, 3, 4],
-    chemistry: [2],
+    chemistry: [],
     french: [4, 4],
 }));
 
@@ -102,9 +112,9 @@ function getPersonData(secretData) { // Дешифрует передаваем�
 
 function getDecodedValue(secret) { // 
     if (secret === 0) {
-        return 'Эмильо';
-    } else {
         return 'Родриго';
+    } else {
+        return 'Эмильо';
     }
 }
 
